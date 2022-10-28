@@ -23,19 +23,16 @@ function generateTimeslots () {
 
     var notesForDesc = $('<div>');
     notesForDesc.addClass('col-md-8 Notes');
-    var textArea = $('<text-area>');
-    textArea.addClass('col-md-8 Notes');
+    var textArea = $('<textarea>');
+    textArea.addClass('col-12 description');
+    textArea.val(savedTask);
 
     var saveArea = $('<div>');
     saveArea.addClass('btn btn-success btn-lg saveButton');
     var saveButton = $('<button>');
     saveButton.addClass('btn btn-success btn-lg saveButton');
-    saveButton.on("click", ).text('Save-Work')
+    saveButton.on("click", ).text('Save-Notes')
 
-
-
-    //saveButton.text(Save);
-    //saveButton.on("click", saveNotes);
     // add its own class so the button looks nice?
 
     newTime.append(hourColumn);
