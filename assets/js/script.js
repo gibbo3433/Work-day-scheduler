@@ -1,9 +1,10 @@
+// These variables decide what time my calendar will start and end at
 var timeChoices = {
     startHour: 8,
     endHour: 23,
 }
 
-
+// This will update the calender to show the correct colours for the current time
 function updateCalendar () {
 
     //This will check the current hour and log it into the console
@@ -14,12 +15,15 @@ function updateCalendar () {
 
         var hour = $(element).attr('data-hour');
 
+        // Add the past class to my hours that are less than the current hout
         if (hour < currentHour) {
             $(element).find('.description').addClass('past');
         }
+        // Add the present class to my hours that equal to the current hour
         else if (hour == currentHour) {
             $(element).find('.description').addClass('present')
         }
+        // Add the future class to my hours that are more than current hour
         else {
             $(element).find('.description').addClass('future')
         }
