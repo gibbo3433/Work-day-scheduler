@@ -12,29 +12,31 @@ function generateTimeslots () {
     // Find any saved data from the local storage, depending on the hour
     var savedTask = localStorage.getItem(hour);
 
-    // Adds a new div for each new hour that we need to add
+    // Adds a new div for each new row that we will need
     var newTime = $('<div>');
     newTime.addClass('row');
     newTime.attr('data-hour' , hour);
 
+    // Adds a new hour column div which will show each hour
     var hourColumn = $('<div>');
     hourColumn.addClass('col-sm-2 hour')
     hourColumn.text(moment(hour, 'h').format('h A'));
 
+    // Adds a new column that includes a text area
     var notesForDesc = $('<div>');
     notesForDesc.addClass('col-md-8 Notes');
     var textArea = $('<textarea>');
     textArea.addClass('col-12 description');
     textArea.val(savedTask);
 
+    // Adds a new  column which includes a save button 
     var saveArea = $('<div>');
     saveArea.addClass('btn btn-success btn-lg saveButton');
     var saveButton = $('<button>');
     saveButton.addClass('btn btn-success btn-lg saveButton');
     saveButton.on("click", ).text('Save-Notes')
 
-    // add its own class so the button looks nice?
-
+    // adds all of these new divs the 'newTime' div and then into '.container' div
     newTime.append(hourColumn);
     newTime.append(notesForDesc)
     notesForDesc.append(textArea);
