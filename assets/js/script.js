@@ -3,9 +3,29 @@ var timeChoices = {
     endHour: 23,
 }
 
-var calendarColumm = $('container');
 
-function generateTimeslots () {
+function updateCalendar () {
+
+    //This will check the current hour and log it into the console
+    var currentHour = moment().hour();
+    console.log(currentHour)
+
+    $('.row').each(function (index, element) {
+
+        var hour = $(element).attr('data-hour');
+
+        if (hour < currentHour) {
+            $(element).find('.description').addClass('past');
+        }
+        else if (hour == currentHour) {
+            $(element).find('.description').addClass('present')
+        }
+        else {
+            $(element).find('.description').addClass('future')
+        }
+    })};
+
+function generateCalendar () {
     // start at the start hour and add 1 hour until the hour gets less than or equal to the end hour
     for (var hour = timeChoices.startHour; hour <= timeChoices.endHour; hour++) {
 
@@ -44,9 +64,7 @@ function generateTimeslots () {
     saveArea.append(saveButton);
     $('.container').append(newTime)
 
-    }
-
-}
+    }};
 
 
 
@@ -56,19 +74,19 @@ function generateTimeslots () {
 function init () {
 
     // This will create the timeslots in the schedule for the user to see
-    generateTimeslots();
+    generateCalendar();
 
     // This will make sure the timeslots in the planner are the correct colour depending on what time of the day it is
-    updateTimeslots();
+    updateCalendar();
 
-    // Set the day using moment.js script
+    // Set the day using moment.js script in the header
     var currentday = moment().format('MMMM Do YYYY, h:mm:ss a');
     $('#currentDay').text(currentday);
 
     // Set so that the timer keeps checking the time of the day every 10 seconds
     setInterval(function () {
 
-        updateTimeslots();
+        updateCalendar();
 
     }, 10000);
 }
