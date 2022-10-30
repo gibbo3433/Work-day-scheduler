@@ -5,12 +5,13 @@ body {
 }
 
 textarea {
-  background: transparent;
+  background:none;
   border: none;
   resize: none;
   color: #000000;
-  border-left: 1px solid black;
   padding: 10px;
+  text-decoration-color: #000000;
+
 }
 
 /* Changes the main header in the file */
@@ -61,12 +62,4 @@ textarea {
   color: white;
 }
 
-/* */
-.saveBtn {
-  border-left: 1px solid black;
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
-  background-color: #06aed5;
-  color: white;
-}
 

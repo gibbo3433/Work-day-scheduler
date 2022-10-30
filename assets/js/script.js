@@ -1,7 +1,7 @@
 // These variables decide what time my calendar will start and end at
 var timeChoices = {
     startHour: 8,
-    endHour: 23,
+    endHour: 21,
 }
 
 // This will update the calender to show the correct colours for the current time
