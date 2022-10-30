@@ -9,7 +9,6 @@ function updateCalendar () {
 
     //This will check the current hour and log it into the console
     var currentHour = moment().hour();
-    console.log(currentHour)
 
     $('.row').each(function (index, element) {
 
@@ -28,6 +27,15 @@ function updateCalendar () {
             $(element).find('.description').addClass('future')
         }
     })};
+
+
+function saveNotes (event) {
+    event.preventDefault();
+    console.log(event)
+
+
+
+}
 
 function generateCalendar () {
     // start at the start hour and add 1 hour until the hour gets less than or equal to the end hour
@@ -58,7 +66,7 @@ function generateCalendar () {
     saveArea.addClass('btn btn-success btn-lg saveButton');
     var saveButton = $('<button>');
     saveButton.addClass('btn btn-success btn-lg saveButton');
-    saveButton.on("click", ).text('Save-Notes')
+    saveButton.on("click", saveNotes).text('Save-Notes')
 
     // adds all of these new divs the 'newTime' div and then into '.container' div
     newTime.append(hourColumn);
@@ -69,10 +77,6 @@ function generateCalendar () {
     $('.container').append(newTime)
 
     }};
-
-
-
-
 
 // This function will start first and then the other functions will follow suit
 function init () {
