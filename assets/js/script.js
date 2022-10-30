@@ -34,11 +34,11 @@ function saveNotes (event) {
     // Saves the correct hour to the local storage
     var hour = $(this).parent().parent().attr('data-hour');
     // Saves the text area associated with the hour
-    var notes = $(this).parent().parent().children().eq(1).children().eq(0).val();
+    var notes = $(this).parent().prev().children(0).val();
 
     // Used this console log to see where my DOM traverse was talking to
     console.log($(this).parent().parent().attr('data-hour'))
-    console.log($(this).parent().parent().children().eq(1).children().eq(0).val())
+    console.log($(this).parent().prev().children(0).val())
 
     // adds the hour and notes into the local storage
     localStorage.setItem(hour, notes)
