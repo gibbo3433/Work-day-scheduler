@@ -52,7 +52,7 @@ I have added HTML alt: notes, CSS /*notes*/ and Javascript //notes to help any f
 
 ## Link to deployed application
 
-
+https://gibbo3433.github.io/Work-day-scheduler/
 
 ## Authors and acknowledgment
 
