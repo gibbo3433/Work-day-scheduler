@@ -44,6 +44,7 @@ function saveNotes (event) {
     localStorage.setItem(hour, notes)
 }
 
+
 function generateCalendar () {
     // start at the start hour and add 1 hour until the hour gets less than or equal to the end hour
     for (var hour = timeChoices.startHour; hour <= timeChoices.endHour; hour++) {
@@ -83,6 +84,13 @@ function generateCalendar () {
     newTime.append(saveArea);
     saveArea.append(saveButton);
     $('.container').append(newTime)
+
+    textArea.on('input', function () {
+        this.style.height = 'auto'; 
+        this.style.height =  
+        (this.scrollHeight) + 'px'; 
+
+    });     
 
     }};
 
