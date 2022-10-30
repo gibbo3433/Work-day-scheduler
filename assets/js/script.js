@@ -28,18 +28,20 @@ function updateCalendar () {
         }
     })};
 
+    // This function allows the textarea to be saved to the local storage in the correct area
 function saveNotes (event) {
 
+    // Saves the correct hour to the local storage
     var hour = $(this).parent().parent().attr('data-hour');
+    // Saves the text area associated with the hour
     var notes = $(this).parent().parent().children().eq(1).children().eq(0).val();
 
+    // Used this console log to see where my DOM traverse was talking to
     console.log($(this).parent().parent().children().eq(1).children().eq(0).val())
 
+    // adds the hour and notes into the local storage
     localStorage.setItem(hour, notes)
-
 }
-
-
 
 function generateCalendar () {
     // start at the start hour and add 1 hour until the hour gets less than or equal to the end hour
@@ -47,7 +49,6 @@ function generateCalendar () {
 
     // Find any saved data from the local storage, depending on the hour
     var savedTask = localStorage.getItem(hour);
-    // this will be where  grab it from the local storage
 
     // Adds a new div for each new row that we will need
     var newTime = $('<div>');
