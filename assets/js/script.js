@@ -28,14 +28,18 @@ function updateCalendar () {
         }
     })};
 
-
 function saveNotes (event) {
-    event.preventDefault();
-    console.log(event)
 
+    var hour = $(this).parent().parent().attr('data-hour');
+    var notes = $(this).parent().parent().children().eq(1).children().eq(0).val();
 
+    console.log($(this).parent().parent().children().eq(1).children().eq(0).val())
+
+    localStorage.setItem(hour, notes)
 
 }
+
+
 
 function generateCalendar () {
     // start at the start hour and add 1 hour until the hour gets less than or equal to the end hour
@@ -43,6 +47,7 @@ function generateCalendar () {
 
     // Find any saved data from the local storage, depending on the hour
     var savedTask = localStorage.getItem(hour);
+    // this will be where  grab it from the local storage
 
     // Adds a new div for each new row that we will need
     var newTime = $('<div>');
@@ -60,6 +65,7 @@ function generateCalendar () {
     var textArea = $('<textarea>');
     textArea.addClass('col-12 description');
     textArea.val(savedTask);
+    // this will be where i grab it from the local storage
 
     // Adds a new  column which includes a save button 
     var saveArea = $('<div>');
